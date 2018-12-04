@@ -5,7 +5,7 @@ public class RomanNumbersConverter {
     private final int conversionUpperLimit = 4999;
     private final int conversionLowerLimit = 1;
 
-
+    // Converts integer to its representation as roman numeral (String)
     public String Convert(int number){
 
         if(number < conversionLowerLimit || number > conversionUpperLimit){
@@ -16,6 +16,7 @@ public class RomanNumbersConverter {
         return romanNumber;
     }
 
+    // Getters for testing
     public int getConversionUpperLimit() {
         return conversionUpperLimit;
     }
