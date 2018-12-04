@@ -6,7 +6,7 @@ public class RomanNumbersConverterTest {
 
     @Test
     public void convertingNumberOutsideLimitShouldReturnNull() {
-        int numberBelowLimit = converter.getConversionLowerLimit() -1;
+        int numberBelowLimit = converter.getCONVERSION_MIN() -1;
         int numberOverLimit = converter.getConversionUpperLimit() +1;
 
         Assert.assertNull(converter.Convert(numberBelowLimit));
