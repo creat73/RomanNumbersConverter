@@ -16,4 +16,12 @@ public class RomanNumbersConverter {
         return romanNumber;
     }
 
+    public int getConversionUpperLimit() {
+        return conversionUpperLimit;
+    }
+
+    public int getConversionLowerLimit() {
+        return conversionLowerLimit;
+    }
+
 }
