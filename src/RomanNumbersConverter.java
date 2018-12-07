@@ -1,7 +1,9 @@
 
 public class RomanNumbersConverter {
+    // Converter will work with new/more symbols and higher limit as long as hey follow the same logic
     private final String[] ROMAN_VALUES = new String[] {"I", "V", "X", "L", "C", "D", "M"};
-    // Conversion limitation due to lack of higher roman symbols
+    /* Conversion limitation due to lack of higher roman symbols
+     It can be made higher, then the program will just add another M for each 1000 above (not correct)*/
     private final int CONVERSION_MAX = 4999;
     private final int CONVERSION_MIN = 1;
     private final int MAX_INDEX_VALUE = ROMAN_VALUES.length -1;
@@ -18,16 +20,16 @@ public class RomanNumbersConverter {
         // Index of the base symbol from list
         int symbolIndex =  numberAsString.length() * 2 - 2;
 
-        // Iterates through every digit in number
+        // Iterates through every digit in number changing it to
         for(int i=0; i<numberAsString.length(); i++){
             // Current digit converted back from String to int
             int digit = Character.getNumericValue(numberAsString.charAt(i));
 
-            if(digit==9){
+            if(digit==9 && symbolIndex != MAX_INDEX_VALUE){
                 romanNumber += ROMAN_VALUES[symbolIndex] + ROMAN_VALUES[symbolIndex+2];
                 digit = 0;
             }
-            else if(digit>=5){
+            else if(digit>=5 && symbolIndex != MAX_INDEX_VALUE){
                 romanNumber += ROMAN_VALUES[symbolIndex+1];
                 digit -= 5;
             }
@@ -43,7 +45,7 @@ public class RomanNumbersConverter {
     }
 
     // Getters for testing
-    public int getConversionUpperLimit() {
+    public int getCONVERSION_MAX() {
         return CONVERSION_MAX;
     }
 
